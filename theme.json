@@ -1,0 +1,20 @@
+{
+"background": "#1d2021",
+"foreground": "#fbf1c7",
+"black": "#282828",
+"red": "#cc241d",
+"green": "#98971a",
+"brown": "#d79921",
+"blue": "#458588",
+"magenta": "#b16286",
+"cyan": "#689d6a",
+"white": "#a89984",
+"brightblack": "#928374",
+"brightred": "#fb4934",
+"brightgreen": "#b8bb26",
+"brightbrown": "#fabd2f",
+"brightblue": "#83a598",
+"brightmagenta": "#d3869b",
+"brightcyan": "#8ec07c",
+"brightwhite": "#ebdbbe"
+}

@@ -1,0 +1,16 @@
+[Unit]
+Description=pitft-tmux
+DefaultDependencies=no
+
+StartLimitIntervalSec=500
+StartLimitBurst=5
+
+[Service]
+User=pi
+Restart=always
+RestartSec=5s
+
+ExecStart=/home/pi/pitft-tmux/pitft-tmux.py
+
+[Install]
+WantedBy=sysinit.target
