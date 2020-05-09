@@ -22,9 +22,9 @@ ansi art
 
 ## Prerequisites
 
-`apt install tmux python3-numpy python3-pil`
+`apt install tmux python3-pip python3-numpy python3-pil`
 
-`pip3 install adafruit-circuitpython-rgb-display spidev libbdf pyte qrcode ptyprocess digitalio`
+`pip3 install adafruit-circuitpython-rgb-display spidev bdflib pyte qrcode ptyprocess`
 
 ## How to run
 
