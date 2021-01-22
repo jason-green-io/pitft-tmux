@@ -8,6 +8,7 @@
 * runs tmux, used to connect to a session to remote control the display
 * use simple shell scripts to output whatever you like
 * 60 columns * 30 rows on a 1.3" display and pretty much unreadable 
+* buttons switch tmux window
 
 ## Examples
 
@@ -16,15 +17,16 @@ This is my Pi Zero W and the Adafruit PiTFT 1.3" hat.
 figlet
 trivia
 weather
+temperature graph
 count down
 ansi art
 
 
 ## Prerequisites
 
-`apt install tmux python3-pip python3-numpy python3-pil`
+`apt install tmux python3-pip`
 
-`pip3 install adafruit-circuitpython-rgb-display spidev bdflib pyte qrcode ptyprocess`
+`pip3 install adafruit-circuitpython-rgb-display spidev bdflib pyte qrcode ptyprocess gpiozero`
 
 ## How to run
 
@@ -46,7 +48,9 @@ fi
 
 Manually run it with `./pitft-tmux`. Then connect to the `tmux` session with `tmux new-session -A -s "tty"`
 
+## theme.json
 
+Color definitions, default is set to gruvbox.
 
 ## qrunicode
 
