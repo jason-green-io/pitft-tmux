@@ -2,25 +2,26 @@
 
 ## What is it?
 
-* terminal emulator supporting 16 colors of foreground/background, underline, reverse and bold
-* miniwi BDF font (with a few additional custom qrcode glyphs) supporting line drawing characters, drawille
+* terminal emulator supporting 16, 256 and 24bit colors of foreground/background, underline, reverse and bold
+* [miniwi](https://git.z0.is/miniwi/log.html) BDF font (with a few additional custom qrcode glyphs) supporting line drawing characters, drawille
 * qrcode utility to use custom glyphs
 * runs tmux, used to connect to a session to remote control the display
 * use simple shell scripts to output whatever you like
-* 60 columns * 30 rows on a 1.3" display and pretty much unreadable 
+* 60 columns * 30 rows on a 1.3" display (pretty much unreadable without a magnifying glass)
 * buttons switch tmux window
 
 ## Examples
 
 This is my Pi Zero W and the Adafruit PiTFT 1.3" hat.
 
+reddit TIL
 figlet
 trivia
-weather
+weather wttr.in
 temperature graph
 count down
 ansi art
-
+pixterm
 
 ## Prerequisites
 
@@ -29,8 +30,6 @@ ansi art
 `pip3 install adafruit-circuitpython-rgb-display spidev bdflib pyte qrcode ptyprocess gpiozero`
 
 ## How to run
-
-Includes a systemd service file to autologin the `pi` user. Copy `override.conf` to `/etc/systemd/system/getty@tty1.service`.
 
 Includes a systemd service file to connect the display to tmux. Copy `pitft-tmux.service` to `/etc/systemd/system`. Then run `systemctl enable pitft-tmux.service` and start it with `systemctl start pitft-tmux.service`.
 
@@ -44,13 +43,21 @@ if [[ $(tty) == "/dev/tty1" ]] && [[ -z "$TMUX" ]]; then
 fi        
 ```
 
-## pitft-tmux
+You'll probably want to auto login the `pi` user via raspi-config
 
-Manually run it with `./pitft-tmux`. Then connect to the `tmux` session with `tmux new-session -A -s "tty"`
+```
+Choose option 3: Boot Options
+Choose option B2: Console Autologin
+Select Finish, and reboot the Raspberry Pi.
+```
+
+## pitft-tmux.py
+
+Manually run it with `./pitft-tmux.py`. Then connect to the `tmux` session with `tmux new-session -A -s "tty"`
 
 ## theme.json
 
-Color definitions, default is set to gruvbox.
+Color definitions, default is set to [gruvbox](https://github.com/morhetz/gruvbox).
 
 ## qrunicode
 
